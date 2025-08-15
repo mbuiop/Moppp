@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}پروفایل کاربری{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <img src="{{ url_for('static', filename='images/user.png') }}" class="rounded-circle mb-3" width="150" alt="User">
+                <h4>{{ current_user.username }}</h4>
+                <p class="text-muted">{{ current_user.email }}</p>
+                <a href="#" class="btn btn-outline-primary btn-sm">ویرایش پروفایل</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5>اطلاعات حساب</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">نام کاربری:</div>
+                    <div class="col-sm-9">{{ current_user.username }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">ایمیل:</div>
+                    <div class="col-sm-9">{{ current_user.email }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">تاریخ عضویت:</div>
+                    <div class="col-sm-9">۲۵ فروردین ۱۴۰۳</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 fw-bold">وضعیت:</div>
+                    <div class="col-sm-9">
+                        <span class="badge bg-success">فعال</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
