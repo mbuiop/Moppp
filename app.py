@@ -1,4 +1,12 @@
+# اضافه کردن این خطوط در ابتدای فایل
 import os
+from dotenv import load_dotenv
+
+# بارگذاری متغیرهای محیطی قبل از ایجاد app
+load_dotenv()
+
+app = Flask(__name__)
+app.config.from_object(Config)
 from flask import Flask, render_template, redirect, url_for, flash, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
