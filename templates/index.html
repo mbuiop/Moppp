@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}خانه{% endblock %}
+
+{% block content %}
+<div class="hero-section bg-light py-5 mb-5">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold">جدیدترین مدهای روز دنیا</h1>
+        <p class="lead">با کیفیت عالی و قیمت مناسب</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">مشاهده محصولات</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="mb-4 border-bottom pb-2">آخرین پیام‌های همگانی</h2>
+    <div class="row">
+        {% for broadcast in broadcasts %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <p class="card-text">{{ broadcast.message }}</p>
+                    <small class="text-muted">{{ broadcast.created_at.strftime('%Y-%m-%d') }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="mb-4 mt-5 border-bottom pb-2">محصولات ویژه</h2>
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{{ url_for('static', filename='uploads/' + product.image) }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description[:50] }}...</p>
+                    <p class="text-danger fw-bold">{{ product.price }} تومان</p>
+                    <a href="#" class="btn btn-outline-primary">مشاهده جزئیات</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
