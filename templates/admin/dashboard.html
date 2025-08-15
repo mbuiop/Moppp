@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}داشبورد مدیریت{% endblock %}
+
+{% block content %}
+<h2 class="mb-4 border-bottom pb-2">داشبورد مدیریت</h2>
+
+<div class="row">
+    <div class="col-md-3 mb-4">
+        <div class="card bg-primary text-white text-center">
+            <div class="card-body">
+                <h5 class="card-title">تعداد محصولات</h5>
+                <p class="card-text display-4">۸۵</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card bg-success text-white text-center">
+            <div class="card-body">
+                <h5 class="card-title">کاربران فعال</h5>
+                <p class="card-text display-4">۱,۲۳۴</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card bg-info text-white text-center">
+            <div class="card-body">
+                <h5 class="card-title">سفارشات جدید</h5>
+                <p class="card-text display-4">۴۷</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card bg-warning text-white text-center">
+            <div class="card-body">
+                <h5 class="card-title">درآمد امروز</h5>
+                <p class="card-text display-4">۱۲,۵۰۰,۰۰۰ تومان</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5>اقدامات سریع</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('admin_products') }}" class="btn btn-outline-primary btn-block">مدیریت محصولات</a>
+                    <a href="{{ url_for('broadcast_message') }}" class="btn btn-outline-success btn-block">ارسال پیام همگانی</a>
+                    <a href="#" class="btn btn-outline-info btn-block">مدیریت کاربران</a>
+                    <a href="#" class="btn btn-outline-warning btn-block">مشاهده سفارشات</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h5>آخرین فعالیت‌ها</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">کاربر جدید با ایمیل test@example.com ثبت نام کرد</li>
+                    <li class="list-group-item">سفارش جدید با شماره #۱۲۳۴ ثبت شد</li>
+                    <li class="list-group-item">محصول جدید "کت چرم مردانه" اضافه شد</li>
+                    <li class="list-group-item">پیام همگانی جدید منتشر شد</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
